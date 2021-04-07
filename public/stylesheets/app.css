@@ -106,6 +106,10 @@ hr {
   cursor: pointer;
 }
 
+img.logoPrincipal{
+  height: 35px;
+}
+
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
