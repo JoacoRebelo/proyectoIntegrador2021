@@ -164,11 +164,13 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: var(--dark-blue);
+  font-family: 'Spartan', sans-serif;
+  text-align: center;
 }
 
 .product-box {
-  background-color: #ffff05cb;
+  background-color: #96c9f3cb;
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
@@ -522,10 +524,12 @@ textarea.form-input {
 }
 
 #Principal {
-  font-family: "Londrina Solid", cursive;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 #BotonCerrar {
-  font-family: "Londrina Solid", cursive;
-  font-weight: bolder;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background-color: #f3e742;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
