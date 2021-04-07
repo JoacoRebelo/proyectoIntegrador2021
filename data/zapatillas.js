@@ -1,4 +1,5 @@
-var zapatillas = [
+const zapatillas = {
+    lista: [
     {
         nombre: "Nike Air Joran 1 Mid Red",
         descripcionCorta: "Las zapatillas Nike Air Jordan 1 Mid Red se inspiran en las primeras AJ1 y ofrecen, a los amantes del...",
@@ -48,7 +49,8 @@ var zapatillas = [
         imagen: "../public/images/products/alpargatas.jpeg",
     },
 ]
-
+}
+module.exports = zapatillas
 
 
 

@@ -1,6 +1,5 @@
+let zapatillas=require("../data/zapatillas")
 const controller = {
-    index: function(req, res){
-        res.render('index')
-    }   
+    index: (req, res) => res.render('index',{zapatillas:zapatillas.list})   
 }
 module.exports = controller; 
