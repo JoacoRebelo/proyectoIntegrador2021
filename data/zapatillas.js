@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 const zapatillas = {
     list: [
+=======
+var zapatillas = [
+>>>>>>> parent of 260ff73 (Pruebas y emprolijando)
     {
         id:0,
         nombre: "Nike Air Joran 1 Mid Red",
@@ -57,8 +61,7 @@ const zapatillas = {
         imagen: "../public/images/products/alpargatas.jpeg",
     },
 ]
-}
-module.exports = zapatillas
+
 
 
 
