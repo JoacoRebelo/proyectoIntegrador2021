@@ -30,6 +30,7 @@ body {
   background-color: var(--light-gray);
 }
 
+
 ul,
 ol {
   list-style: none;
@@ -107,7 +108,8 @@ hr {
 }
 
 img.logoPrincipal{
-  height: 35px;
+  height: 43px;
+  width: 160px;
 }
 
 /*====== Main Navbar ======*/
@@ -269,7 +271,7 @@ img.logoPrincipal{
 
 .footer-data i {
   color: var(--light-blue);
-  font-size: 3.5em;
+  font-size: 4.5em;
 }
 
 .footer-data h2 {
@@ -533,7 +535,7 @@ textarea.form-input {
 
 #BotonCerrar {
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  background-color: #f0d24c;
+  background-color: #78caef;
   padding-top: 3px;
   padding-bottom: 3px;
 }
