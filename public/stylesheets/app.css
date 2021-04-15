@@ -152,6 +152,10 @@ img.logoPrincipal{
   border-bottom: solid 1px var(--gray);
 }
 
+ul.right-navbar a{
+ padding: 0 0 0 0;
+}
+
 /*====== Banner ======*/
 .banner {
   background-image: url(/images/img-home-banner.jpg);
@@ -539,3 +543,5 @@ textarea.form-input {
   padding-top: 3px;
   padding-bottom: 3px;
 }
+
+
