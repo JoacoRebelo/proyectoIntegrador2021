@@ -13,13 +13,18 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form action="" method="POST">
-					<div class="form-group">
-					  <input type="text" class="form-control" id="titulo" placeholder="Titulo" name="titulo">
-					  <input type="image" class="form-control" id="image" placeholder="Imagen" name="imagen">
-					  <input type="text" class="form-control" id="descripcion" placeholder="Descripción" name="descripcion">
+				<form action="" method="POST"  class="row g-3 align-items-center">
+					<div class="form-group col-12">
+						<p>Titulo</p>
+					  <input type="text" class="form-control col-12 p-4" id="titulo" placeholder="Titulo" name="titulo">
+						<p>Agregar imagen</p>
+					  <input type="image" class="form-control col-3 p-4" id="image" placeholder="Imagen" name="imagen">
+						<p>Agregar Descripción</p>
+					  <input type="text" class="form-control col-12 p-4" id="descripcion" placeholder="Descripción" name="descripcion">
 					</div>
-					<button type="submit" class="btn btn-primary" href="/">Agregar producto</button>
+					<div class="pl-4 pt-4">
+						<a class="btn btn-primary" href="/profile" role="button">Agregar</a>
+						</div>
 					
 			</form>
 			</h2>
