@@ -27,9 +27,8 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: #e0edf3;
 }
-
 
 ul,
 ol {
