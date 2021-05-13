@@ -11,7 +11,7 @@ edad TINYINT
 CREATE TABLE productos (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(200),
-usuario_id INT,
+usuario_id INT UNSIGNED,
 url VARCHAR(500),
 fecha_creacion DATE,
 
@@ -20,8 +20,8 @@ FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 
 CREATE TABLE comentarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-usuario_id INT,
-producto_id INT,
+usuario_id INT UNSIGNED,
+producto_id INT UNSIGNED,
 comentario VARCHAR(300),
 fecha_comentario DATE,
 
