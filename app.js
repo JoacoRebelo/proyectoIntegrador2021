@@ -26,6 +26,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+const session = require('express-session');
+
+app.use(session( {secret: "secretoso mensaje",
+resave: false,
+saveUninitialized: true
+}));
+
+app.use(function(req, res, next) {
+  if(req.session.usuario){
+    res.locals = {
+      usuarioLogueado: true
+    }
+  } else {
+    res.locals = {
+      usuarioLogueado: false
+    }
+  }
+
+	return next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productsRouter);
