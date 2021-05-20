@@ -15,8 +15,11 @@ const controller = {
         db.Usuario.findOne(filtro).then(resultado => {
             if(bcrypt.compareSync(req.body.pass, resultado.pass)){
                 req.session.mail = resultado.email;
+                res.redirect('/');
+            } else {
+                res.redirect('/register')
             }
-            res.redirect('/');
+        
         }).catch(error => {
             console.log(error);
         })
