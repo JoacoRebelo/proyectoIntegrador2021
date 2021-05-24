@@ -16,6 +16,7 @@ nombre VARCHAR(600) NOT NULL,
 usuario_id INT UNSIGNED,
 url VARCHAR(700) NOT NULL,
 fecha_crea DATE,
+descripcionLarga VARCHAR(1000),
 
 FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
@@ -32,3 +33,8 @@ FOREIGN KEY (producto_id) REFERENCES productos(id)
 );
 
 SELECT * FROM usuarios;
+
+
+INSERT INTO productos (nombre, usuario_id, url, fecha_crea, descripcionLarga) VALUES ('Matias', 1,'adidas.jpeg' , '2021_04_29', 'aaaa');
+INSERT INTO productos (nombre, usuario_id, url, fecha_crea, descripcionLarga) VALUES ('Adidas Yeezy 350 Zebra', 1,'yeezy350.jpeg' , '2021_04_29', 'aaaa');
+INSERT INTO usuarios (nombre, edad, email, fecha_nac, contrasena) VALUES ('pp', 2, 'aa@gmail.com', '2021_04_29', 'hdjs')

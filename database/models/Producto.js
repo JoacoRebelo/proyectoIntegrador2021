@@ -15,7 +15,10 @@ module.exports = (sequelize, dataTypes) => {
         usuario_id: {
             type: dataTypes.INTEGER,
             field: "usuario_id"
-        }
+        }, descripcionLarga: {
+            type: dataTypes.STRING,
+            field: "descripcionLarga"
+        },
     }, {
         tableName: "productos",
         timestamps: false

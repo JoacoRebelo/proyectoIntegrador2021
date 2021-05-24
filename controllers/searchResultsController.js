@@ -1,6 +1,13 @@
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
 const controller = {
     results: function(req, res){
-        res.render('search-results')
+        let filtro = {where: {nombre:{[Op.like]:'%'+ req.query.search + '%'}}};
+        db.Producto.findAll(filtro).then(
+           productos =>{res.render('search-results', {productos: productos})}
+       )
+       
     }   
 }
 module.exports = controller; 
