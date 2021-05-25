@@ -3,7 +3,7 @@ const Op = db.Sequelize.Op;
 
 const controller = {
     results: function(req, res){
-        let filtro = {where: {nombre:{[Op.like]:'%'+ req.query.search + '%'}}};
+        let filtro = {where: {descripcionLarga:{[Op.like]:'%'+ req.query.search + '%'}}};
         db.Producto.findAll(filtro).then(
            productos =>{res.render('search-results', {productos: productos})}
        )
