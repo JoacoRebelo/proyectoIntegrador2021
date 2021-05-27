@@ -7,7 +7,6 @@ const controller = {
         db.Producto.findAll(filtro).then(
            productos =>{res.render('search-results', {productos: productos})}
        )
-       
-    }   
+    }  
 }
 module.exports = controller; 

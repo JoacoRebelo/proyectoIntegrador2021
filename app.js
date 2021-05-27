@@ -35,18 +35,22 @@ saveUninitialized: true
 }));
 
 app.use(function(req, res, next) {
-  if(req.session.usuario){
+  if(req.session.nombre){
     res.locals = {
-      usuarioLogueado: true
+      usuarioLogueado: true,
+      nombreUsuario: req.session.nombre
     }
   } else {
     res.locals = {
-      usuarioLogueado: false
+      usuarioLogueado: false,
+      nombreUsuario: 'anonimo',
     }
   }
 
 	return next();
 });
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
