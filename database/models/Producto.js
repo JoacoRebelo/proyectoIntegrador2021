@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     });
     Producto.associate = (db) => {
-        Producto.belognsTo(db.Usuario,{
+        Producto.belongsTo(db.Usuario,{
             as:'usuario',
             foreingKey:('usuario_id')
         })
