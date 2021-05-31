@@ -28,6 +28,10 @@ module.exports = (sequelize, dataTypes) => {
             as:'usuario',
             foreingKey:('usuario_id')
         })
+        Producto.hasMany(db.Comentario,{
+            as:'comentario',
+            foreingKey:('prducto_id')
+        })
     }
     return Producto;
 }
