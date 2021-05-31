@@ -24,6 +24,16 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "comentarios",
         timestamps: false
     });
+    Comentario.associate = (db) => {
+        Comentario.belognsTo(db.Usuario,{
+            as:'usuario',
+            foreingKey:('usuario_id')
+        });
+        Comentario.belognsTo(db.Producto,{
+            as:'producto',
+            foreingKey:('producto_id')
+        })
 
+    }
     return Comentario;
 }

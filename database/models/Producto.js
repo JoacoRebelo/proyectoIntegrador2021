@@ -23,6 +23,11 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "productos",
         timestamps: false
     });
-
+    Producto.associate = (db) => {
+        Producto.belognsTo(db.Usuario,{
+            as:'usuario',
+            foreingKey:('usuario_id')
+        })
+    }
     return Producto;
 }
