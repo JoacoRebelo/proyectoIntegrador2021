@@ -38,7 +38,7 @@ app.use(function(req, res, next) {
   if(req.session.nombre){
     res.locals = {
       usuarioLogueado: true,
-      nombreUsuario: req.session.nombre
+      nombreUsuario: req.session.name
     }
   } else {
     res.locals = {

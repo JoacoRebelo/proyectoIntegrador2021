@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     });
 
-    Comentario.associate = (db) => {
+    /*Comentario.associate = (db) => {
         Comentario.belongsTo(db.Usuario,{
             as:'usuario',
             foreingKey:('usuario_id')
@@ -36,6 +36,6 @@ module.exports = (sequelize, dataTypes) => {
             foreingKey:('producto_id')
         })
 
-    }
+    }*/
     return Comentario;
 }

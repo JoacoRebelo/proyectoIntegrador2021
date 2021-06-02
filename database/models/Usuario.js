@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
-        }, nombre: {
+        }, name: {
             type: dataTypes.STRING,
             field: "nombre"
         }, pass: {
@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "usuarios",
         timestamps: false
     });
-    Usuario.associate = (db) => {
+    /*Usuario.associate = (db) => {
         Usuario.hasMany(db.Producto,{
             as:'producto',
             foreingKey:('usuario_id')
@@ -32,6 +32,6 @@ module.exports = (sequelize, dataTypes) => {
             as:'comentario',
             foreingKey:('usuario_id')
         })
-    }
+    }*/
     return Usuario;
 }
