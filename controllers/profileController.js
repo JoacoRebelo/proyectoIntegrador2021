@@ -1,9 +1,16 @@
-const zapatillas = require('../data/zapatillas')
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
 const controller = {
-    profile: function(req, res){
-        res.render('profile', {
-            zapatillas: zapatillas
-        })
-    }   
-}
+    profile: (req, res, next)=>{
+        let filtro={
+            order:[
+                ['nombre','DESC'],
+            ],
+        }
+        db.Producto.findAll(filtro).then(
+           productos =>{res.render('profile', {productos: productos})}
+       )
+    }  
+    }
 module.exports = controller; 

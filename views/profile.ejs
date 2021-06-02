@@ -37,17 +37,15 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<%for (let index = 0; index < 8; index++) { %>		
-			
+			<%for (let index = 0; index < productos.length; index++) { %>		
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="../product/<%= zapatillas[index].id %>">
+						<a href="../product/<%= productos[index].id %>">
 							<figure class="product-box_image">
-								<img src="<%= zapatillas[index].imagen %>" alt="cafetera moulinex">
+								<img src="/images/products/<%= productos[index].url %>" alt="">			
 							</figure>
 							<article class="product-box_data">
-								<h2><%= zapatillas[index].nombre %></h2>
-								<p><%= zapatillas[index].descripcionCorta %></p>
+								<h2><%= productos[index].name %></h2>
 								<p>Comentarios: 12</p>
 							</article>
 						</a>
