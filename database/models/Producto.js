@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "productos",
         timestamps: false
     });
-    Producto.associate = (db) => {
+    /*Producto.associate = (db) => {
         Producto.belongsTo(db.Usuario,{
             as:'usuario',
             foreingKey:('usuario_id')
@@ -32,6 +32,6 @@ module.exports = (sequelize, dataTypes) => {
             as:'comentario',
             foreingKey:('prducto_id')
         })
-    }
+    }*/
     return Producto;
 }
