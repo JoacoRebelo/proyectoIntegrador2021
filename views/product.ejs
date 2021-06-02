@@ -6,7 +6,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= zapatillas.nombre %></h2> 
+			<h2 class="products-title"><%= productos.nombre %></h2> 
 			<p class="product-detail-description">
 				<a href="/product-add">Editar</a>
 			</p>
@@ -14,9 +14,9 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/<%= zapatillas.imagen %>" alt="" class="product-detail-img">
+					<img src="/images/products/<%= productos.url %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= zapatillas.descripcionLarga %></p>
+						<%= productos.descripcionLarga %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -25,7 +25,7 @@
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/profile">Jonah Hill </a> </strong>
-								 Las <%= zapatillas.nombre %> son las mejores zapatillas del mundo</p>
+								 Las <%= productos.name %> son las mejores zapatillas del mundo</p>
 							</div>
 						</article>
 						<article>
@@ -33,7 +33,7 @@
 							<div class="data">
 								<p class="user">
 									<strong> <a href="/profile">Michaerl Cera </a> </strong>
-									No me saco mas las <%= zapatillas.nombre %></p>
+									No me saco mas las <%= productos.name %></p>
 							</div>
 						</article>
 						<article>
@@ -41,7 +41,7 @@
 							<div class="data">
 								<p class="user">
 									<strong> <a href="/profile">Seth Rogen </a> </strong>
-									Take my money, just give me the <%= zapatillas.nombre %>
+									Take my money, just give me the <%= productos.name %>
 									</p>
 							</div>
 						</article>
@@ -50,7 +50,7 @@
 							<div class="data">
 								<p class="user">
 									<strong> <a href="/profile">Christopher Mintz-Plasse </a> </strong>
-									Juro tener 21 para comprar las <%= zapatillas.nombre %></p>
+									Juro tener 21 para comprar las <%= productos.name %></p>
 							</div>
 						</article>
 						<article>
@@ -58,14 +58,14 @@
 							<div class="data">
 								<p class="user">
 									<strong> <a href="/profile">Dave Franco </a> </strong>
-									Todos en las peliculas que actue tienen las <%= zapatillas.nombre %></p>
+									Todos en las peliculas que actue tienen las <%= productos.name %></p>
 							</div>
 						</article>
 
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button"><a href="/product/<%= zapatillas.id %>">AGREGAR COMENTARIO</a> </button>
+						<button type="submit" class="buy-now-button"><a href="/product/<%= productos.id %>">AGREGAR COMENTARIO</a> </button>
 					</form>
 					<hr>
 				</div>

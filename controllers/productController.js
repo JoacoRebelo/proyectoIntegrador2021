@@ -3,8 +3,12 @@ const Op = db.Sequelize.Op;
 
 
 const controller = {
-    product: function(req, res, next){
+    product: (req, res, next)=>{
+        db.Producto.findByPk(req.params.id).then(productos =>{
+            res.render("product", {productos:productos})
+        }).catch(err=>{console.log(err)})
+
         
-    } 
+    },
 }
 module.exports = controller; 

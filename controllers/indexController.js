@@ -10,7 +10,7 @@ const controller = {
         }
         db.Producto.findAll(filtro).then(
            productos =>{res.render('index', {productos: productos})}
-       ).catch(err=>{console.log(err)})
+       )
     }  
     }
 
