@@ -25,13 +25,13 @@ module.exports = (sequelize, dataTypes) => {
         Usuario.hasMany(db.Producto,{
             as:'producto',
             foreingKey:('usuario_id')
-        })
-    }
-    Usuario.associate = (db) => {
+        }),
         Usuario.hasMany(db.Comentario,{
             as:'comentario',
             foreingKey:('usuario_id')
         })
     }*/
+
+   
     return Usuario;
 }

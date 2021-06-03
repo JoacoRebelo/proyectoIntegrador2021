@@ -8,30 +8,29 @@ module.exports = (sequelize, dataTypes) => {
         }, name: {
             type: dataTypes.STRING,
             field: "nombre"
-        }, url: {
-            type: dataTypes.STRING,
-            field: "url"
-        },
+        }, 
         usuario_id: {
             type: dataTypes.INTEGER,
-            field: "usuario_id"
         }, descripcionLarga: {
             type: dataTypes.STRING,
             field: "descripcionLarga"
+        }, url: {
+            type: dataTypes.STRING,
+            field: "url"
         },
     }, {
         tableName: "productos",
         
     });
-   /* Producto.associate = (db) => {
-        Producto.belongsTo(db.Usuario,{
+    Producto.associate = (db) => {
+        /*Producto.belongsTo(db.Usuario,{
             as:'usuario',
             foreingKey:('usuario_id')
-        })
+        });*/
         Producto.hasMany(db.Comentario,{
             as:'comentario',
-            foreingKey:('prducto_id')
+            foreingKey:('producto_id')
         })
-    }*/
+    };
     return Producto;
 }
