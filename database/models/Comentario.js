@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     }, {
         tableName: "comentarios",
-        timestamps: false
+        
     });
 
     /*Comentario.associate = (db) => {

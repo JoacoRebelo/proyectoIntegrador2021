@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         },
     }, {
         tableName: "productos",
-        timestamps: false
+        
     });
    /* Producto.associate = (db) => {
         Producto.belongsTo(db.Usuario,{
