@@ -18,7 +18,7 @@ const controller = {
                 req.session.nombre = resultado.nombre
                 res.redirect('/');
             } else {
-                res.redirect('/register')
+                res.redirect('/login')
             }
         
         }).catch(error => {

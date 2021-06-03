@@ -35,10 +35,10 @@ saveUninitialized: true
 }));
 
 app.use(function(req, res, next) {
-  if(req.session.nombre){
+  if(req.session.nombre =! null){
     res.locals = {
       usuarioLogueado: true,
-      nombreUsuario: req.session.name
+      nombreUsuario: req.session.nombre
     }
   } else {
     res.locals = {

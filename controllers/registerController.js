@@ -2,7 +2,7 @@ const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
 const controller = {
-    register: function(req, res){
+    register: (req, res)=>{
         res.render('register')
     } ,
     

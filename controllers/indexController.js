@@ -5,7 +5,7 @@ const controller = {
     index:(req, res, next)=>{
         let filtro={
             order:[
-                ['nombre','DESC'],
+                ['createdAt','DESC'],
             ],
         }
         db.Producto.findAll(filtro).then(
