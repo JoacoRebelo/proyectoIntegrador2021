@@ -7,16 +7,14 @@ const controller = {
     productAdd:(req,res)=>{
         db.Producto.create({
             name: req.body.name,
-            descripcionLarga: req.body.descripcionLarga
+            descripcionLarga: req.body.descripcionLarga,
+            url: req.body.url,
         }).then(usuario => {
             res.redirect('/profile');
         }).catch(error => {
             console.log(error);
         })
     },
-    nuevaFoto: (req, res) => {
-        console.log('/images/fotosSubidas/'  + req.file.filename);
-        res.render('product-add');
-    },
+   
 }
 module.exports = controller; 
