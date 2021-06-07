@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-
+<% if (usuarioLogueado != null) { %>
+	<%- include('./partials/header') %>
+<% } else { %>
 	<%- include('./partials/headerDeslogueado') %>
-
+<% } %>
 <body>
 	<!-- Novedades -->
 	<div class="container products-wrapper">

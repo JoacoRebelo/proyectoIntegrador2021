@@ -14,11 +14,16 @@ const controller = {
 
         db.Usuario.findOne(filtro).then(resultado => {
             if(bcrypt.compareSync(req.body.pass, resultado.pass)){
-                req.session.mail = resultado.email;
-                req.session.nombre = resultado.nombre
+                req.session.resultado = {
+                    id: resultado.id,
+                    name: resultado.nombre
+                };
+                if(req.body.remember){
+                    res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 5 });
+                }
                 res.redirect('/');
             } else {
-                res.redirect('/login')
+                res.redirect('/register')
             }
         
         }).catch(error => {

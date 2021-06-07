@@ -13,6 +13,7 @@ var profileRouter = require('./routes/profile');
 var productAddRouter = require('./routes/productAdd');
 var profileEditRouter = require('./routes/profileEdit');
 var searchResultsRouter = require('./routes/searchResults');
+var logoutRouter = require('./routes/logout');
 
 var app = express();
 
@@ -34,20 +35,34 @@ resave: false,
 saveUninitialized: true
 }));
 
+const db = require('./database/models');
+
 app.use(function(req, res, next) {
-  if(req.session.nombre =! null){
+  if(req.cookies.userId && !req.session.resultado) {
+    db.Usuario.findByPk(req.cookies.userId).then(resultado => {
+      req.session.resultado = resultado.nombre;
+      return next();
+    });
+  } else {
+  	return next();
+  }}
+);
+
+
+app.use(function(req, res, next) {
+  if(req.session.resultado){
     res.locals = {
-      usuarioLogueado: true,
-      nombreUsuario: req.session.nombre
+      usuarioLogueado: false,
+      usuarioPrueba: req.session.resultado
     }
   } else {
     res.locals = {
-      usuarioLogueado: false,
-      nombreUsuario: 'anonimo',
+      usuarioLogueado: true
     }
   }
 
-	return next();
+
+  return next();
 });
 
 
@@ -61,6 +76,7 @@ app.use('/profile', profileRouter);
 app.use('/product-add', productAddRouter);
 app.use('/profile-edit', profileEditRouter);
 app.use('/search-results', searchResultsRouter);
+app.use('/logout', logoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

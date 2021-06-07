@@ -55,16 +55,26 @@
 			</ul>
 
 			<ul class="right-navbar">
- 				
-					<li>
-						<a href="/profile">
-							<%= nombreUsuario %> <i class="fas fa-user"></i>
-						</a>
-					</li>
-					<li>
-						<a href="/login"> Cerrar sesion <i class="fas fa-sign-in-alt"></i></a>
-					</li>
-				</ul>
+				<% if(! usuarioLogueado) { %>
+				   <li>
+					   <a href="/profile">
+						   <%= usuarioPrueba %> <i class="fas fa-user"></i>
+					   </a>
+				   </li>
+				   <li>
+					   <a href="/logout"> Cerrar sesion <i class="fas fa-sign-in-alt"></i></a>
+				   </li>
+				   
+			   <% } else { %>
+				   <li>
+					   <a href="/register">Creá tu cuenta <i class="far fa-address-card"></i>
+					   </a>
+				   </li>
+				   <li>
+					   <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+				   </li> 
+			   <% } %>
+		   </ul>
 		</nav>
 	</div>
 </header>
