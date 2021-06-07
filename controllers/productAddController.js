@@ -8,7 +8,7 @@ const controller = {
         db.Producto.create({
             name: req.body.name,
             descripcionLarga: req.body.descripcionLarga,
-            url: req.body.url,
+            url: req.file.filename,
         }).then(usuario => {
             res.redirect('/profile');
         }).catch(error => {
