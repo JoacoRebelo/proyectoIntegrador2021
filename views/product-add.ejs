@@ -13,12 +13,13 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form action="" method="POST"  class="row g-3 align-items-center">
+				<form action="/profile" method="POST"  enctype='multipart/form-data' class="row g-3 align-items-center">
 					<div class="form-group col-12">
 						<p>Titulo</p>
-					  		<input type="text" class="form-control col-12 p-4" placeholder="Titulo" name="name">
-						<p>Agregar imagen</p>
-							<a class="btn btn-primary" href="/search-results" role="button">Subir Foto</a>
+						
+					  	<input type="text" class="form-control col-12 p-4" placeholder="Titulo" name="name">
+						  	<input name='subirFoto' type="file">
+							
 						<p>Agregar Descripción</p>
 					  		<input type="text" class="form-control col-12 p-4" placeholder="Descripción" name="descripcionLarga">
 							<input type="submit" class="btn btn-primary" value="Register">

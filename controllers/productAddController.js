@@ -13,6 +13,10 @@ const controller = {
         }).catch(error => {
             console.log(error);
         })
-    }  
+    },
+    nuevaFoto: (req, res) => {
+        console.log('/images/fotosSubidas/'  + req.file.filename);
+        res.render('product-add');
+    },
 }
 module.exports = controller; 
