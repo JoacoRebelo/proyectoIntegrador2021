@@ -16,6 +16,10 @@ module.exports = (sequelize, dataTypes) => {
         email: {
             type: dataTypes.STRING,
             field: "email"
+        },
+        url:{
+            type:dataTypes.STRING,
+            field:'url'
         }
     }, {
         tableName: "usuarios",

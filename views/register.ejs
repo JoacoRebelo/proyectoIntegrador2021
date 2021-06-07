@@ -13,14 +13,18 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form action="" method="POST" class="row g-3 align-items-center">
+				<form action="/register" method="POST" class="row g-3 align-items-center" enctype='multipart/form-data'>
 					<div class="form-group col-12">
 					  <p>Nombre</p>
-					  <input type="text" class="form-control col-12 p-4" id="" placeholder="Nombre" name="name">
+					  		<input type="text" class="form-control col-12 p-4" id="" placeholder="Nombre" name="name">
 					  <p>Email</p>
-					  <input type="email" class="form-control col-12 p-4" id="" placeholder="Email" name="email">
+					  		<input type="email" class="form-control col-12 p-4" id="" placeholder="Email" name="email">
 					  <p>Contraseña</p>
-					  <input type="password" class="form-control col-12 p-4" id="" placeholder="Contraseña" name="pass">
+					  		<input type="password" class="form-control col-12 p-4" id="" placeholder="Contraseña" name="pass">
+					  <p>Imagen</p>
+							<input name='url' type="file">
+						<br>
+						<br>
 					  <input type="submit" class="btn btn-primary" value="Register">
 					</div>
 					<br>

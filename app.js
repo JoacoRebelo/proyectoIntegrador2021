@@ -40,7 +40,7 @@ const db = require('./database/models');
 app.use(function(req, res, next) {
   if(req.cookies.userId && !req.session.resultado) {
     db.Usuario.findByPk(req.cookies.userId).then(resultado => {
-      req.session.resultado = resultado.nombre;
+      req.session.resultado = resultado.name;
       return next();
     });
   } else {
@@ -53,13 +53,15 @@ app.use(function(req, res, next) {
   if(req.session.resultado){
     res.locals = {
       usuarioLogueado: false,
-      usuarioPrueba: req.session.resultado
+      usuarioPrueba: req.session.resultado.name,
+      fotoUsuario: req.session.resultado.url,
     }
   } else {
     res.locals = {
       usuarioLogueado: true
     }
   }
+  
 
 
   return next();

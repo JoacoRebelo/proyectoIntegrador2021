@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const bcrypt = require('bcryptjs');
+const { urlencoded } = require('express');
 
 const controller = {
     login: function(req, res){
@@ -16,7 +17,8 @@ const controller = {
             if(bcrypt.compareSync(req.body.pass, resultado.pass)){
                 req.session.resultado = {
                     id: resultado.id,
-                    name: resultado.nombre
+                    name: resultado.name,
+                 
                 };
                 if(req.body.remember){
                     res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 5 });

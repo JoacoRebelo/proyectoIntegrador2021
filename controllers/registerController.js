@@ -11,7 +11,8 @@ const controller = {
         db.Usuario.create({
             name: req.body.name,
             pass: passEncriptada,
-            email: req.body.email
+            email: req.body.email,
+            url: req.file.filename,
         }).then(usuario => {
             res.redirect('/profile');
         }).catch(error => {
