@@ -15,6 +15,5 @@ const controller = {
             console.log(error);
         })
     },
-   
 }
 module.exports = controller; 
