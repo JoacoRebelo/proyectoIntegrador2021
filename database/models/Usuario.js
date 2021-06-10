@@ -20,6 +20,10 @@ module.exports = (sequelize, dataTypes) => {
         url:{
             type:dataTypes.STRING,
             field:'url'
+        },
+        date: {
+            type: dataTypes.DATE,
+            field: 'fecha_nac'
         }
     }, {
         tableName: "usuarios",

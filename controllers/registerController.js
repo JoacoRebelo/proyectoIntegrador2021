@@ -12,7 +12,8 @@ const controller = {
             name: req.body.name,
             pass: passEncriptada,
             email: req.body.email,
-            url: req.file.filename
+            url: req.file.filename,
+            date: req.body.date
         })
         .then(resultado => {
             req.session.resultado = {
