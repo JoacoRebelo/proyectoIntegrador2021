@@ -1,2 +1,6 @@
-- Anonimo en header/ al ingresar que aparezca mi nombre
-- porq las relaciones tiran error
+*FALTA:
+- borrar producto
+- editar producto
+- editar perfil
+- agregar comentario
+- al registrarse no pueden tener el mismo login (nombre, mail, demas)
