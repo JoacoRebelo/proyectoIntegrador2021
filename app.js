@@ -51,10 +51,11 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
   if(req.session.resultado){
+    console.log(req.session.resultado.url);
     res.locals = {
       usuarioLogueado: false,
       usuarioPrueba: req.session.resultado.name,
-      fotoUsuario: req.session.resultado.url,
+      fotoUsuario: req.session.resultado.url
     }
   } else {
     res.locals = {

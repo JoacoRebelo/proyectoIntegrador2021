@@ -11,6 +11,6 @@ const controller = {
         db.Producto.findAll(filtro).then(
            productos =>{res.render('profile', {productos: productos})}
        )
-    }  
+    } 
     }
 module.exports = controller; 

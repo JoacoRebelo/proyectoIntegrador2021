@@ -18,7 +18,7 @@ const controller = {
                 req.session.resultado = {
                     id: resultado.id,
                     name: resultado.name,
-                 
+                    url: resultado.url
                 };
                 if(req.body.remember){
                     res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 5 });

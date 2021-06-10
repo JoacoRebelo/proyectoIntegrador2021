@@ -12,8 +12,14 @@ const controller = {
             name: req.body.name,
             pass: passEncriptada,
             email: req.body.email,
-            url: req.file.filename,
-        }).then(usuario => {
+            url: req.file.filename
+        })
+        .then(resultado => {
+            req.session.resultado = {
+                id: resultado.id,
+                name: resultado.name,
+                url: resultado.url
+            };
             res.redirect('/profile');
         }).catch(error => {
             console.log(error);
