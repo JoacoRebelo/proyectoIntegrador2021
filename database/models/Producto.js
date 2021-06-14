@@ -23,13 +23,13 @@ module.exports = (sequelize, dataTypes) => {
         
     });
     Producto.associate = (db) => {
-        /*Producto.belongsTo(db.Usuario,{
+        Producto.belongsTo(db.Usuario,{
             as:'usuario',
-            foreingKey:('usuario_id')
-        });*/
+            foreignKey:'usuario_id'
+        });
         Producto.hasMany(db.Comentario,{
             as:'comentario',
-            foreingKey:('producto_id')
+            foreignKey:'producto_id'
         })
     };
     return Producto;

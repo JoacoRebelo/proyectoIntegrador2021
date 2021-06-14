@@ -7,6 +7,7 @@ const controller = {
     productAdd:(req,res)=>{
         db.Producto.create({
             name: req.body.name,
+            usuario_id: req.session.resultado.id,
             descripcionLarga: req.body.descripcionLarga,
             url: req.file.filename,
         }).then(usuario => {

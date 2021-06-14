@@ -4,13 +4,16 @@ const Op = db.Sequelize.Op;
 
 const controller = {
     product: (req, res, next)=>{
+        //busca un producto especifico segun el id
         db.Producto.findByPk(req.params.id).then(productos =>{
             res.render("product", {productos:productos})
         }).catch(err=>{console.log(err)})        
     },
     comentarios: (req, res, next)=>{
         db.Comentario.create({
-            comentario: req.body.comentario
+            usuario_id: req.session.resultado.id,
+            producto_id: req.params.id,
+            comentario: req.body.comentario,
         })
     }
 }

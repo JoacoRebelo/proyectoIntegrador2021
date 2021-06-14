@@ -28,12 +28,12 @@ module.exports = (sequelize, dataTypes) => {
     Comentario.associate = (db) => {
         Comentario.belongsTo(db.Usuario,{
             as:'usuario',
-            foreingKey:('usuario_id')
+            foreignKey:'usuario_id'
         });
 
         Comentario.belongsTo(db.Producto,{
             as:'producto',
-            foreingKey:('producto_id')
+            foreignKey:'producto_id'
         })
 
     }

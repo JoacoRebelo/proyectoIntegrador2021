@@ -42,7 +42,7 @@ app.use(function(req, res, next) {
     db.Usuario.findByPk(req.cookies.userId).then(resultado => {
       req.session.resultado = resultado.name;
       return next();
-    });
+    }).catch(error=>console.log(err));
   } else {
   	return next();
   }}
@@ -51,11 +51,11 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
   if(req.session.resultado){
-    console.log(req.session.resultado.url);
     res.locals = {
       usuarioLogueado: false,
       usuarioPrueba: req.session.resultado.name,
-      fotoUsuario: req.session.resultado.url
+      fotoUsuario: req.session.resultado.url,
+      idUsuario: req.session.resultado.id,
     }
   } else {
     res.locals = {
