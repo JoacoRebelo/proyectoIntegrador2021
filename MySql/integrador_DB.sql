@@ -35,6 +35,9 @@ FOREIGN KEY (producto_id) REFERENCES productos(id)
 
 SELECT * FROM usuarios;
 SELECT * FROM productos;
+SELECT * FROM comentarios;
+
+INSERT INTO comentarios (usuario_id, producto_id, comentario) VALUES (1, 2 , 'que onda perri');
 
 INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Matias', 20 , 'matias@gmail.com', 'asfabfdbfda','1999-06-16');
 INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Andres', 10 , 'andres@gmail.com', 'asfabfdbfda','2002-05-13');
