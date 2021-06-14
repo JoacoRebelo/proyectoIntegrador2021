@@ -63,10 +63,20 @@
 									Todos en las peliculas que actue tienen las <%= productos.name %></p>
 							</div>
 						</article>
+						<%for (let index = 0; index < index.length; index++) { %>		
+						<article>
+							<img src="images/users/<%=fotoUsuario%>" alt="">
+							<div class="data">
+								<p class="user">
+									<strong> <a href="/profile"><%= usuarioPrueba %></a> </strong>
+									<%= comentarios.comentario %></p>
+							</div>
+						</article>
+						<%}%>
 
 					</section>
 					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
 						<button type="submit" class="buy-now-button"><a href="/product/<%= productos.id %>">AGREGAR COMENTARIO</a> </button>
 					</form>
 					<hr>
