@@ -75,10 +75,11 @@
 						<%}%>
 
 					</section>
+					<% if(! usuarioLogueado) { %>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
 						<button type="submit" class="buy-now-button"><a href="/product/<%= productos.id %>">AGREGAR COMENTARIO</a> </button>
-					</form>
+					</form><% } %>
 					<hr>
 				</div>
 			</div>
