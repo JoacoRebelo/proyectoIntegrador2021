@@ -7,12 +7,11 @@ const controller = {
         //busca un producto especifico segun el id
         const filtro = {
             include: [
-            {association: "usuarios", include: "comentarios"},
-            ]
-        }
+            {association: "comentario", include:'usuario'},
+        ]}
         db.Producto.findByPk(req.params.id, filtro).then(productos =>{
             res.render("product", {productos:productos})
-            console.log(JSON.stringify(product, null, 10));
+            console.log(JSON.stringify(productos, null, 10));
         }).catch(err=>{console.log(err)})        
     },
 

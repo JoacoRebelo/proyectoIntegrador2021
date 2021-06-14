@@ -63,28 +63,22 @@
 									Todos en las peliculas que actue tienen las <%= productos.name %></p>
 							</div>
 						</article>
-						<%for (let index = 0; index < comentarios.length; index++) { %>		
-							<article>
-								<img src="images/users/<%=fotoUsuario%>" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a href="/profile"><%= usuarioPrueba %></a> </strong>
-										<%= comentarios[index].comentario %></p>
-								</div>
-							</article>
+						<%for (let index = 0; index < productos.comentario.length; index++) { %>		
+						<article>
+							<img src="/images/users/<%=productos.comentario[index].usuario.url%>" alt="">
+							<div class="data">
+								<p class="user">
+									<strong> <a href="/profile/"><%=productos.comentario[index].usuario.name%></a> </strong>
+									<%= productos.comentario[index].comentario %></p>
+							</div>
+						</article>
 						<%}%>
 
 					</section>
-					<% if(! usuarioLogueado) { %>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
-<<<<<<< HEAD
-						<input type="submit" class="btn btn-primary" value="Agregar" >
-					</form>
-=======
 						<button type="submit" class="buy-now-button"><a href="/product/<%= productos.id %>">AGREGAR COMENTARIO</a> </button>
-					</form><% } %>
->>>>>>> e8d4a3a9af0680e42403f33edecf0f6724a1cbcc
+					</form>
 					<hr>
 				</div>
 			</div>

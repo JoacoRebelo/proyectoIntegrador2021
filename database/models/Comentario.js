@@ -5,9 +5,6 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
-        }, name: {
-            type: dataTypes.STRING,
-            field: "nombre"
         }, usuario_id: {
             type: dataTypes.INTEGER,
             field: "usuario_id"
