@@ -8,7 +8,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= productos.nombre %></h2> 
 			<p class="product-detail-description">
-				<% if(! usuarioLogueado) { %>
+				<% if(idUsuario = productos.usuario_id) { %>
 				<a href="/product-edit">Editar</a>
 				<% } %>
 			</p>
