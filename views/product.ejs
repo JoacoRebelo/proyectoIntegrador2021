@@ -11,9 +11,15 @@
 				<h1 class="nombreProducto"><%= productos.name %></h1>
 				<% if (! usuarioLogueado){ %>
 				<% if(idUsuario == productos.usuario_id) { %>
-					<div style="width: 100%; text-align: right; font-size: large;">
-					<a href="/product-edit">Editar</a>
-					<a style='color: lightcoral;' href="/">Borrar</a>
+					<div style="width: 100%; text-align: right;">
+						<form action="/product" method="GET">
+							<input type="hidden" name="id" value="<%= productos.usuario_id %>">
+							<input type="submit" value="Modificar">
+						  </form>
+						  <form action="/borrar" method="POST">
+							<input type="hidden" name="id" value="<%= productos.usuario_id %>">
+							<input type="submit" value="Borrar">
+						  </form>
 					</div>
 				<% }} %>
 			</p>
