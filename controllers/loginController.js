@@ -15,7 +15,7 @@ const controller = {
 
         db.Usuario.findOne(filtro).then(resultado => {
             if(bcrypt.compareSync(req.body.pass, resultado.pass)){
-                req.session.resultado = {
+                req.session.resultado === {
                     id: resultado.id,
                     name: resultado.name,
                     url: resultado.url
@@ -25,7 +25,7 @@ const controller = {
                 }
                 res.redirect('/');
             } else {
-                res.redirect('/register')
+                res.render('register', {error: 'Email o contraseña inocrrecta'});
             }
         
         }).catch(error => {
