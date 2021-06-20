@@ -29,10 +29,10 @@ const controller = {
         db.Producto.destroy({
             where: {
                 id: req.body.id
-            }
+            },
         }).then(() => {
-            res.redirect('/');
-        });
+            res.redirect('http://localhost:3000/');
+        }).catch(err => console.log(err));
     },
     
 }

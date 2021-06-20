@@ -16,6 +16,7 @@ var profileEditRouter = require('./routes/profileEdit');
 var searchResultsRouter = require('./routes/searchResults');
 var logoutRouter = require('./routes/logout');
 
+
 var app = express();
 
 // view engine setup
@@ -82,7 +83,6 @@ app.use('/product-edit', productEditRouter);
 app.use('/profile-edit', profileEditRouter);
 app.use('/search-results', searchResultsRouter);
 app.use('/logout', logoutRouter);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -559,4 +559,19 @@ textarea.form-input {
   padding-bottom: 3px;
 }
 
+#botonBorrar{
+  color: black;
+  width: 100px;
+  background-color: lightcoral;
+  border-radius: 15px;
+  font-weight: bold;
+}
+#botonEditar{
+  color: black;
+  width: 100px;
+  background-color: lightcyan;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
 

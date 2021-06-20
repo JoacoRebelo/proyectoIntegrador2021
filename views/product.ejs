@@ -13,12 +13,12 @@
 				<% if(idUsuario == productos.usuario_id) { %>
 					<div style="width: 100%; text-align: right;">
 						<form action="/product" method="GET">
-							<input type="hidden" name="id" value="<%= productos.usuario_id %>">
-							<input type="submit" value="Modificar">
+							<input type="hidden" name="id" value="<%= productos.id %>">
+							<input type="submit" value="Modificar" id="botonEditar">
 						  </form>
-						  <form action="/borrar" method="POST">
-							<input type="hidden" name="id" value="<%= productos.usuario_id %>">
-							<input type="submit" value="Borrar">
+						  <form action="/product" method="POST">
+							<input type="hidden" name="id" value="<%= productos.id %>">
+							<input type="submit" value="Borrar" id="botonBorrar">
 						  </form>
 					</div>
 				<% }} %>
