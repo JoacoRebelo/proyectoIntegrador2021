@@ -10,8 +10,17 @@ const controller = {
         let passEncriptada = bcrypt.hashSync(req.body.pass);
         let minLength = 3;
         let errors = {}
+        const filtroMail={
+            where: {
+                email: req.body.email
+            }
+        }
         if (req.body.pass.length < minLength) {
             errors.message = "La contraseña debe contener mínimo 3 caracteres";
+            res.locals.errors = errors;
+            return res.render ('register');
+        } if (req.body.email == db.Usuario.findOne(filtroMail)) {
+            errors.message = "El mail ya pertenece a un usuario";
             res.locals.errors = errors;
             return res.render ('register');
         } else{

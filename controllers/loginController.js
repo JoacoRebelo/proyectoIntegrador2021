@@ -25,7 +25,7 @@ const controller = {
                 }
                 res.redirect('/');
             } else {
-                res.render('register', {error: 'Email o contraseña inocrrecta'});
+                res.render('login', {error: 'Email o contraseña incorrecta'});
             }
         
         }).catch(error => {

@@ -12,9 +12,12 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= usuarios.name %>
-						<a href="/profile-edit">
+						<% if (! usuarioLogueado){ %>
+							<% if(idUsuario == usuarios.id) { %>
+						<a href="/profile-edit/<%= idUsuario %>">
 						<i class="fas fa-cog"></i>
 						</a>
+						<% }} %>
 					</h1>
 				</div>
 				<div>

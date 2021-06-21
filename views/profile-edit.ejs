@@ -5,26 +5,29 @@
 <%- include('./partials/header') %>
 
 <body>
-	<!-- Novedades -->
+	
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			<!-- Editar nombre usuario -->
 			<h2 class="col-12">
-				<form action="" method="POST" class="row g-3 align-items-center">
+				<form action="/profile-edit" method="POST" class="row g-3 align-items-center">
 					<div class="form-group col-12">
 						<p>Nombre</p>
-					  <input type="name" class="form-control col-12 p-4" id="username" placeholder="Nombre" name="name" >
+						<input type="hidden" name="id" value="<%= idUsuario %>">
+					  	<input type="name" class="form-control col-12 p-4" id="username" placeholder="Nombre" name="name" >
+					  	<input type="submit" value="Guardar Cambios" class="btn btn-primary">
 					</div>
-					<div class="form-group col-12">
+
+					<br>
+					<!--<div class="form-group col-12">
 						<p>Confirmar Contraseña</p>
 					  <input type="password" class="form-control col-12 p-4" id="pwd" placeholder="Contraseña" name="pswd">
-					</div>
-					<div class="pl-4">
-						<a  class="btn btn-primary" href="/profile" role="button">Guardar cambios</a>
-					</div>
+					</div>-->
+					<br>
+					
 			</form>
 			</h2>
 
