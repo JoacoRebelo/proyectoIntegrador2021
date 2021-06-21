@@ -21,7 +21,7 @@ const controller = {
                 name: resultado.name,
                 url: resultado.url
             };
-            res.redirect('/profile');
+            res.redirect('/profile/' + resultado.id);
         }).catch(error => {
             console.log(error);
         })

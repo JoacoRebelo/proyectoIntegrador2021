@@ -27,7 +27,7 @@
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
 							<img src="/images/products/<%= productos.url %>" alt="" class="product-detail-img">
-							<h3 class="usuarioProducto">Contactar a <a href="/views/profile.ejs:<%= productos.usuario.id %>"><%= productos.usuario.name %></a></h3>
+							<h3 class="usuarioProducto">Contactar a <a href="/profile/<%= productos.usuario.id %>"><%= productos.usuario.name %></a></h3>
 							<p class="product-detail-description">
 						<%= productos.descripcionLarga %></p>
 				</article>

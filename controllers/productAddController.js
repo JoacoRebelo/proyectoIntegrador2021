@@ -11,7 +11,7 @@ const controller = {
             descripcionLarga: req.body.descripcionLarga,
             url: req.file.filename,
         }).then(usuario => {
-            res.redirect('/profile');
+            res.redirect('/');
         }).catch(error => {
             console.log(error);
         })

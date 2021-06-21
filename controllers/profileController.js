@@ -4,18 +4,16 @@ const Op = db.Sequelize.Op;
 const controller = {
     profile: (req, res, next)=>{
         let filtro={
-            order:[
-                ['createdAt','DESC'],
-            ],
             include: [
                 {association: "comentario"},
+                {association:'producto', include:'comentario'}
                 
             ]
         }
-        db.Producto.findAll(filtro).then(
-           productos =>{res.render('profile', {productos: productos})}
-       )
-    } 
-    }
+        db.Usuario.findByPk(req.params.id, filtro).then(usuarios =>{
+            res.render("profile", {usuarios:usuarios}),
+            console.log(JSON.stringify(usuarios, null, 10));
+        }).catch(err=>{console.log(err)})       
+    }}
 module.exports = controller; 
 
