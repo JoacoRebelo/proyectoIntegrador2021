@@ -6,29 +6,29 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= productos.nombre %></h2> 
 			<p class="product-detail-description">
 				<h1 class="nombreProducto"><%= productos.name %></h1>
 				<% if (! usuarioLogueado){ %>
-				<% if(idUsuario == productos.usuario_id) { %>
-					<div style="width: 100%; text-align: right;">
-						<form action="/product" method="GET">
-							<input type="hidden" name="id" value="<%= productos.id %>">
-							<input type="submit" value="Modificar" id="botonEditar">
-						  </form>
-						  <form action="/product" method="POST">
-							<input type="hidden" name="id" value="<%= productos.id %>">
-							<input type="submit" value="Borrar" id="botonBorrar">
-						  </form>
-					</div>
-				<% }} %>
-			</p>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/<%= productos.url %>" alt="" class="product-detail-img">
-					<p class="product-detail-description">
+					<% if(idUsuario == productos.usuario_id) { %>
+						<div style="width: 100%; text-align: right;">
+							<form action="/product" method="GET">
+								<input type="hidden" name="id" value="<%= productos.id %>">
+								<input type="submit" value="Modificar" id="botonEditar">
+							</form>
+							<form action="/product" method="POST">
+								<input type="hidden" name="id" value="<%= productos.id %>">
+								<input type="submit" value="Borrar" id="botonBorrar">
+							</form>
+						</div>
+						<% }} %>
+					</p>
+				</div>
+				<div class="product-detail">
+					<div class="row">
+						<article class="col-12 col-lg-8 product-detail-info">
+							<img src="/images/products/<%= productos.url %>" alt="" class="product-detail-img">
+							<h3 class="usuarioProducto">Contactar a <a href="/views/profile.ejs:<%= productos.usuario.id %>"><%= productos.usuario.name %></a></h3>
+							<p class="product-detail-description">
 						<%= productos.descripcionLarga %></p>
 				</article>
 				<div class="col-12 col-lg-4">
@@ -79,7 +79,7 @@
 							<img src="/images/users/<%=productos.comentario[index].usuario.url%>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/profile/"><%=productos.comentario[index].usuario.name%></a> </strong>
+									<strong> <a href="/profile/<%=productos.comentario[index].usuario_id%>"><%=productos.comentario[index].usuario.name%></a> </strong>
 									<%= productos.comentario[index].comentario %></p>
 							</div>
 						</article>

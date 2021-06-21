@@ -8,6 +8,7 @@ const controller = {
         const filtro = {
             include: [
             {association: "comentario", include:'usuario'},
+            {association:'usuario'}
         ]}
         db.Producto.findByPk(req.params.id, filtro).then(productos =>{
             res.render("product", {productos:productos})

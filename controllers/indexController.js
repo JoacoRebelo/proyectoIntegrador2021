@@ -7,9 +7,13 @@ const controller = {
             order:[
                 ['createdAt','DESC'],
             ],
-        }
+            include: [
+                {association: "comentario"},
+                {association:'usuario'}
+            ]}
         db.Producto.findAll(filtro).then(
-           productos =>{res.render('index', {productos: productos})}
+           productos =>{res.render('index', {productos: productos})
+        }
        )
     }  
     }

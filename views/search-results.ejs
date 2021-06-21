@@ -22,8 +22,8 @@
 								</figure>
 								<article class="product-box_data">
 									<h2><%= productos[index].name %></h2>
-									<p>Comentarios: 12</p>
-									<p>Subido por <a href="/profile"><%= usuarioPrueba %></a></p>
+									<p>Comentarios: <%= productos[index].comentario.length %></p>
+									<p>Subido por <a href="/profile/<%= productos[index].user_id %>"> <%= productos[index].usuario.name %> </a></p>
 								</article>
 							</a>
 						</section>

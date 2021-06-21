@@ -7,6 +7,10 @@ const controller = {
             order:[
                 ['createdAt','DESC'],
             ],
+            include: [
+                {association: "comentario"},
+                
+            ]
         }
         db.Producto.findAll(filtro).then(
            productos =>{res.render('profile', {productos: productos})}

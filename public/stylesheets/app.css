@@ -83,10 +83,12 @@ hr {
 .search-form {
   position: relative;
   display: flex;
+  padding-left: 8vw;
   align-items: center;
 }
 
 .search-form_input {
+  border-radius: 5px;
   border: solid 1px var(--light-gray);
   display: block;
   width: 100%;
@@ -107,6 +109,13 @@ hr {
   border-left: solid 1px var(--light-gray);
   color: var(--gray);
   cursor: pointer;
+}
+.search-form:hover{
+  color:lightsteelblue;
+}
+
+.search-form_button:hover{
+color: lightskyblue;
 }
 
 img.logoPrincipal{
@@ -574,4 +583,7 @@ textarea.form-input {
   font-weight: bold;
 }
 
-
+.usuarioProducto{
+  padding-left: 2vw;
+  color: var(--gray);
+}
