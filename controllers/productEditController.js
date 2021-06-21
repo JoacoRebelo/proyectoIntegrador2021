@@ -4,11 +4,26 @@ const controller = {
     editar: function(req, res){
         res.render('product-edit')
     },
-    editarProducto: function(req, res, next){
+    editarProducto:(req, res, next)=>{
     db.Producto.findByPk(req.params.id).then(productos =>{
         res.render("product-edit", {productos : productos})
-        console.log(JSON.stringify(productos, null, 10));
     }).catch(err=>{console.log(err)})  
-}
+    },
+    postearEdit:(req,res)=>{
+        db.Producto.update({
+            name: req.body.name,
+            descripcionLarga: req.body.descripcionLarga,
+            url: req.file.filename,
+        },{
+            where: {
+                id: req.body.id
+            }
+        }).then(() => {
+            res.redirect('/product/' + req.body.id);
+        }).catch(error => {
+            console.log(error);
+        });
+    }  
+    
 }
 module.exports = controller; 
