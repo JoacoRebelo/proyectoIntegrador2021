@@ -5,26 +5,30 @@
 <body>
 	<!-- product detail -->
 	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<p class="product-detail-description">
-				<h1 class="nombreProducto"><%= productos.name %></h1>
+		<div class="nombreEditarBorrar">
+			
+				<section>
+					<h1 class="nombreProducto"><%= productos.name %></h1>
+				</section>
+				
 				<% if (! usuarioLogueado){ %>
-					<% if(idUsuario == productos.usuario_id) { %>
-						<div style="width: 100%; text-align: right;">						
-						
-							
-							<a href="/product-edit/<%= productos.id %>">
+					<% if(idUsuario == productos.usuario_id) { %>					
+						<section>
+							<a href="/product-edit/<%= productos.id %>" class="rosca"> 
 							<i class="fas fa-cog"></i>
 							</a>
-							
+						</section>
+
+						<section>
 							<form action="/product" method="POST">
 								<input type="hidden" name="id" value="<%= productos.id %>">
 								<input type="submit" value="Borrar" id="botonBorrar">
 							</form>
-						</div>
+						</section>
+						
 						<% }} %>
-					</p>
-				</div>
+				
+		</div>
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">

@@ -356,6 +356,12 @@ h1.nombres {
   line-height: 1.5;
 }
 
+.nombreEditarBorrar {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 80% 10% 10%;
+}
+
 .product-detail-price {
   font-size: 5.5em;
   margin: 10px 0;
@@ -449,6 +455,16 @@ h1.nombres {
 }
 .comments .user {
   font-size: 1.7em;
+}
+
+a.rosca {
+  font-size: x-large;
+  padding-left: 80px;
+}
+
+h1.nombreProducto {
+  font-size: 20px;
+  margin: 0 0 25px 0;
 }
 
 /*====== Formularios ======*/
@@ -571,9 +587,10 @@ textarea.form-input {
 #botonBorrar{
   color: black;
   width: 100px;
-  background-color: lightcoral;
-  border-radius: 15px;
-  font-weight: bold;
+  background-color: #78caef;
+  font-size: 17px;
+  margin-top: 2px;
+  border: none;
 }
 #botonEditar{
   color: black;
