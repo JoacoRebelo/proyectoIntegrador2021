@@ -1,23 +1,24 @@
 *FALTA:
 - editar producto
 - editar perfil
-- al registrarse no pueden tener el mismo login (nombre, mail, demas)
+- al registrarse no pueden tener el mismo login (mail)
 
 <!SI O SI!>
 //+ Al poner el rayoito en el SQL todo de una, no tiene que dar error. (borrar select o comentarlos).
 //+ Los modelos debe estar para las 3 tablas (con timestamps en true o sin timestamps).
 //+ Un usuario pueda registrarse. (usuario, contraseña, mail, fecha de nacimiento).
 //+ El correo no se puede repetir y no puede ser nulo.
-+ La contraseña tiene q tener minimo de 3 caracteres, no nula y encriptada.
+//+ La contraseña tiene q tener minimo de 3 caracteres, no nula y encriptada.
 //+ No se pueden repetir los usuarios en la base de datos (tiene que tener unique).
 //+ Funcionar la opción recordar usuario.
 //+ Header logeado: nombre del usuario y cambiar los links.
 //+ El boton de cerrar sesión tienen que borrar la sesión las cookies.
-+ El perfil tienen que mostrar la cantidad de productos y comentarios. Solo el usuario puede editar el perfil (solo a vos te aparece la herramienta de editar).
+//+ El perfil tienen que mostrar la cantidad de productos y comentarios. 
++ Solo el usuario puede editar el perfil (solo a vos te aparece la herramienta de editar).
 //+ El buscador va recibir un texto y que busque en el nombre o en la descripción.
-+ Al clickear sobre los productos que se vea el detalle y el nombre del usuario que lo cargó (con el link para que me mande al perfil).
+//+ Al clickear sobre los productos que se vea el detalle y el nombre del usuario que lo cargó (con el link para que me mande al perfil).
 + Listado de más nuevos y más viejos.
 //+ La opcion crear producto solo disponible con el usuario logueado. Minimo pide imagen del producto y titulo.
-+ Para cada comentario debe estar el nombre del usuario y debe ser cickiable el nombre para que te lleve al perfil.
+//+ Para cada comentario debe estar el nombre del usuario y debe ser cickiable el nombre para que te lleve al perfil.
 //+ Opcion de borrar/editar el producto solo disponible para el usuario que lo subió.
 //+ Solo pueden comentar usuarios logueados.

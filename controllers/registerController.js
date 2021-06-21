@@ -8,7 +8,14 @@ const controller = {
     
     registerCreateUser: (req, res) => {
         let passEncriptada = bcrypt.hashSync(req.body.pass);
-        db.Usuario.create({
+        let minLength = 3;
+        let errors = {}
+        if (req.body.pass.length < minLength) {
+            errors.message = "La contraseña debe contener mínimo 3 caracteres";
+            res.locals.errors = errors;
+            return res.render ('register');
+        } else{
+             db.Usuario.create({
             name: req.body.name,
             pass: passEncriptada,
             email: req.body.email,
@@ -25,6 +32,8 @@ const controller = {
         }).catch(error => {
             console.log(error);
         })
+        }
+       
     }
 }
 module.exports = controller; 

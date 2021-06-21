@@ -23,6 +23,9 @@
 					  		<input type="email" class="form-control col-12 p-4" id="" placeholder="Email" name="email">
 					  <p>Contraseña</p>
 					  		<input type="password" class="form-control col-12 p-4" id="" placeholder="Contraseña" name="pass">
+							  <% if(locals.errors){  %> 
+						<p class= “error”> <%= errors.message %> </p>
+					 <% } %>
 					  <p>Imagen</p>
 							<input name='url' type="file">
 						<br>
@@ -34,6 +37,7 @@
 					<p class="pl-4">¿Ya tenés una cuenta? <a href="/login">Ingresá acá</a> </p>
 					
 			</form>
+			
 			</h2>
 
 
