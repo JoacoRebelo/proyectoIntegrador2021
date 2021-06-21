@@ -15,6 +15,7 @@ const controller = {
            productos =>{res.render('index', {productos: productos})
         }
        )
+       
     }  
     }
 
