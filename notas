@@ -1,5 +1,7 @@
 *FALTA:
 - al registrarse no pueden tener el mismo login (mail)
+- como hacer lo de productos mas viejos en index
+- revisar app,js (cookies)
 
 <!SI O SI!>
 //+ Al poner el rayoito en el SQL todo de una, no tiene que dar error. (borrar select o comentarlos).
