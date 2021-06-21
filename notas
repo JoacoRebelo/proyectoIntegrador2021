@@ -1,6 +1,4 @@
 *FALTA:
-- editar producto
-- editar perfil
 - al registrarse no pueden tener el mismo login (mail)
 
 <!SI O SI!>
@@ -14,7 +12,7 @@
 //+ Header logeado: nombre del usuario y cambiar los links.
 //+ El boton de cerrar sesión tienen que borrar la sesión las cookies.
 //+ El perfil tienen que mostrar la cantidad de productos y comentarios. 
-+ Solo el usuario puede editar el perfil (solo a vos te aparece la herramienta de editar).
+//+ Solo el usuario puede editar el perfil (solo a vos te aparece la herramienta de editar).
 //+ El buscador va recibir un texto y que busque en el nombre o en la descripción.
 //+ Al clickear sobre los productos que se vea el detalle y el nombre del usuario que lo cargó (con el link para que me mande al perfil).
 + Listado de más nuevos y más viejos.

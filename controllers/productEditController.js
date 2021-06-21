@@ -2,7 +2,9 @@ const db = require('../database/models');
 
 const controller = {
     editar: function(req, res){
-        res.render('product-edit')
+        db.Producto.findByPk(req.params.id).then(productos =>{
+            res.render("product-edit", {productos : productos})
+        }).catch(err=>{console.log(err)})  
     },
     editarProducto:(req, res, next)=>{
     db.Producto.findByPk(req.params.id).then(productos =>{

@@ -21,7 +21,7 @@ const controller = {
                     url: resultado.url
                 };
                 if(req.body.remember){
-                    res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 5 });
+                    res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 50 });
                 }
                 res.redirect('/');
             } else {

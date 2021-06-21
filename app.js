@@ -64,9 +64,6 @@ app.use(function(req, res, next) {
       usuarioLogueado: true
     }
   }
-  
-
-
   return next();
 });
 

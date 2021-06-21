@@ -16,12 +16,12 @@
 				<form action="/product-edit" method="POST"  enctype='multipart/form-data' class="row g-3 align-items-center">
 					<div class="form-group col-12">
 						<p>Nuevo nombre</p>
-							<input type="text" name="id" value="<%=productos.id%>">
+							<input type="hidden" name="id" value="<%=productos.id%>">
 					  		<input type="text" class="form-control col-12 p-4" placeholder="Titulo Nuevo" name="name">
 							  <p>Nueva descripción</p>
 					  		<input type="text" class="form-control col-12 p-4" placeholder="Descripción Nueva" name="descripcionLarga">
 							  <p>Subir nueva imagen</p>
-								  <input name='url' type="file">
+								  <input name='url' type="file" accept= "image/gif, image/png, image/jpeg">
 								  <br>
 								  <br>
 							<input type="submit" class="btn btn-primary" value="Guardar Edición">
