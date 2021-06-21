@@ -10,11 +10,13 @@
 				<h1 class="nombreProducto"><%= productos.name %></h1>
 				<% if (! usuarioLogueado){ %>
 					<% if(idUsuario == productos.usuario_id) { %>
-						<div style="width: 100%; text-align: right;">
-							<form action="/product" method="GET">
-								<input type="hidden" name="id" value="<%= productos.id %>">
-								<input type="submit" value="Modificar" id="botonEditar">
-							</form>
+						<div style="width: 100%; text-align: right;">						
+						
+							
+							<a href="/product-edit/<%= productos.id %>">
+							<i class="fas fa-cog"></i>
+							</a>
+							
 							<form action="/product" method="POST">
 								<input type="hidden" name="id" value="<%= productos.id %>">
 								<input type="submit" value="Borrar" id="botonBorrar">

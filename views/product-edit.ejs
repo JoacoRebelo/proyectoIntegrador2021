@@ -11,11 +11,12 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar producto</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			<!-- editar producto -->
 			<h2 class="col-12">
-				<form action="/product-add" method="POST"  enctype='multipart/form-data' class="row g-3 align-items-center">
+				<form action="/product-edit" method="POST"  enctype='multipart/form-data' class="row g-3 align-items-center">
 					<div class="form-group col-12">
-						<p>Nuevo titulo</p>
+						<p>Nuevo nombre</p>
+							<input type="text" name="id" value="<%= productos.id %>">
 					  		<input type="text" class="form-control col-12 p-4" placeholder="Titulo Nuevo" name="name">
 							  <p>Nueva descripción</p>
 					  		<input type="text" class="form-control col-12 p-4" placeholder="Descripción Nueva" name="descripcionLarga">

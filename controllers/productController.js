@@ -11,7 +11,7 @@ const controller = {
             {association:'usuario'}
         ]}
         db.Producto.findByPk(req.params.id, filtro).then(productos =>{
-            res.render("product", {productos:productos})
+            res.render("product", {productos : productos})
             console.log(JSON.stringify(productos, null, 10));
         }).catch(err=>{console.log(err)})        
     },
