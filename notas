@@ -18,7 +18,7 @@
 //+ Solo el usuario puede editar el perfil (solo a vos te aparece la herramienta de editar).
 //+ El buscador va recibir un texto y que busque en el nombre o en la descripción.
 //+ Al clickear sobre los productos que se vea el detalle y el nombre del usuario que lo cargó (con el link para que me mande al perfil).
-+ Listado de más nuevos y más viejos.
+//+ Listado de más nuevos y más viejos.
 //+ La opcion crear producto solo disponible con el usuario logueado. Minimo pide imagen del producto y titulo.
 //+ Para cada comentario debe estar el nombre del usuario y debe ser cickiable el nombre para que te lleve al perfil.
 //+ Opcion de borrar/editar el producto solo disponible para el usuario que lo subió.
