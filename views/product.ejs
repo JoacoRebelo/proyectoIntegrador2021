@@ -5,30 +5,23 @@
 <body>
 	<!-- product detail -->
 	<div class="container products-wrapper">
-		<div class="nombreEditarBorrar">
-			
-				<section>
-					<h1 class="nombreProducto"><%= productos.name %></h1>
-				</section>
-				
+		<div class="d-flex align-items-center">
+			<p class="product-detail-description">
+				<h1 class="nombreProducto"><%= productos.name %></h1>
 				<% if (! usuarioLogueado){ %>
-					<% if(idUsuario == productos.usuario_id) { %>					
-						<section>
-							<a href="/product-edit/<%= productos.id %>" class="rosca"> 
-							<i class="fas fa-cog"></i>
-							</a>
-						</section>
-
-						<section>
+					<% if(idUsuario == productos.usuario_id) { %>
+						<div style="width: 100%; text-align: right;">						
 							<form action="/product" method="POST">
 								<input type="hidden" name="id" value="<%= productos.id %>">
 								<input type="submit" value="Borrar" id="botonBorrar">
 							</form>
-						</section>
-						
+							<a href="/product-edit/<%= productos.id %>">
+							<i class="fas fa-cog"></i>
+							</a>
+						</div>
 						<% }} %>
-				
-		</div>
+					</p>
+				</div>
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
@@ -39,47 +32,9 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="/images/users/Jonah.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/profile">Jonah Hill </a> </strong>
-								 Las <%= productos.name %> son las mejores zapatillas del mundo</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/Michael.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Michaerl Cera </a> </strong>
-									No me saco mas las <%= productos.name %></p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/Seth.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Seth Rogen </a> </strong>
-									Take my money, just give me the <%= productos.name %>
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/Chris.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Christopher Mintz-Plasse </a> </strong>
-									Juro tener 21 para comprar las <%= productos.name %></p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/users/Dave.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Dave Franco </a> </strong>
-									Todos en las peliculas que actue tienen las <%= productos.name %></p>
-							</div>
-						</article>
+						<%if(productos.comentario.length == 0){%>
+						<article><p>El producto aún no tiene comentarios </p></article>
+						<%}else{%>
 						<%for (let index = 0; index < productos.comentario.length; index++) { %>		
 						<article>
 							<img src="/images/users/<%=productos.comentario[index].usuario.url%>" alt="">
@@ -89,7 +44,7 @@
 									<%= productos.comentario[index].comentario %></p>
 							</div>
 						</article>
-						<%}%>
+						<%}}%>
 
 					</section>
 					<% if(! usuarioLogueado) { %>
