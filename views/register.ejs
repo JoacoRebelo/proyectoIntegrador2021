@@ -16,13 +16,13 @@
 				<form action="/register" method="POST" class="row g-3 align-items-center" enctype='multipart/form-data'>
 					<div class="form-group col-12">
 					  <p>Nombre</p>
-					  		<input type="text" class="form-control col-12 p-4" id="" placeholder="Nombre" name="name">
+					  		<input type="text" class="form-control col-12 p-4" id="" placeholder="Nombre" name="name" required>
 					  <p>Fecha de nacimiento</p>
-					 		<input type="date" class="form-control col-12 p-4" id="" placeholder="Fecha de nacimiento" name="date">
+					 		<input type="date" class="form-control col-12 p-4" id="" placeholder="Fecha de nacimiento" name="date" required>
 					  <p>Email</p>
-					  		<input type="email" class="form-control col-12 p-4" id="" placeholder="Email" name="email">
+					  		<input type="email" class="form-control col-12 p-4" id="" placeholder="Email" name="email" required>
 					  <p>Contraseña</p>
-					  		<input type="password" class="form-control col-12 p-4" id="" placeholder="Contraseña" name="pass">
+					  		<input type="password" class="form-control col-12 p-4" id="" placeholder="Contraseña" name="pass" required>
 							  <% if(locals.errors){  %> 
 						<p class= “error” style="color: red; font-weight: normal;"> <%= errors.message %> </p>
 					 <% } %>
@@ -39,8 +39,8 @@
 			</form>
 			
 			</h2>
-
-
+		</div>
+	</div>
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->
