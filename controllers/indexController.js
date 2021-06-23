@@ -24,12 +24,22 @@ const controller = {
                 {association: "comentario"},
                 {association:'usuario'}
             ]}
+        //Creo el filtro de los más comentados
+        let filtroComentados={
+            //orden ascendente
+            order:[
+                ['updatedAt', 'DESC'],
+            ],
+            include: [
+                {association: "comentario"},
+                {association:'usuario'}
+            ]}
         //creamos un doble filtro en la busqueda de productosß
         db.Producto.findAll(filtro).then(productos=>{
         db.Producto.findAll(filtroViejos).then(
-           productosViejos =>
-           {res.render('index', {productos: productos, productosViejos:productosViejos})
-        })})
+           productosViejos =>{db.Producto.findAll(filtroComentados).then(productosComentados =>
+           {res.render('index', {productos: productos, productosViejos:productosViejos, productosComentados: productosComentados})
+        })})})
     }  
 }
 
