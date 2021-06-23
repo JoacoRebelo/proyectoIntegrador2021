@@ -1,18 +1,19 @@
 const db = require('../database/models');
-const Op = db.Sequelize.Op;
 
 const controller = {
+    //creo el controlador del perfil
     profile: (req, res, next)=>{
-        let filtro={
+        let asosiaciones={
+            //hago las asosiaciones para poder usarlas en la vista
             include: [
                 {association: "comentario"},
                 {association:'producto', include:'comentario'}
                 
             ]
         }
-        db.Usuario.findByPk(req.params.id, filtro).then(usuarios =>{
-            res.render("profile", {usuarios:usuarios}),
-            console.log(JSON.stringify(usuarios, null, 10));
+        //busco un usuario con el mismo id en la base de datos
+        db.Usuario.findByPk(req.params.id, asosiaciones).then(usuarios =>{
+            res.render("profile", {usuarios:usuarios})
         }).catch(err=>{console.log(err)})       
     }}
 module.exports = controller; 

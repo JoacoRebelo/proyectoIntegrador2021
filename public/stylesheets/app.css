@@ -203,12 +203,18 @@ div.banner img{
   margin: 20px 0;
 }
 
+#productos-viejos{
+  background-color:#56b3ffcb;
+}
+
 .product-box a {
   display: block;
 }
 
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
+  height: 30vh;
+  background-color: white;
 }
 
 .product-box_data {

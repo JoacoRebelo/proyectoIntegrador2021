@@ -21,7 +21,6 @@ const upload = multer({
   });
 
 router.get('/:id', controller.editar);
-router.get('/:id', controller.editarProducto);
 router.post('/',upload.single('url'), controller.postearEdit);
 
 

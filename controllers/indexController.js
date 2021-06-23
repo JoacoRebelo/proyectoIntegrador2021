@@ -24,6 +24,7 @@ const controller = {
                 {association: "comentario"},
                 {association:'usuario'}
             ]}
+        //creamos un doble filtro en la busqueda de productosß
         db.Producto.findAll(filtro).then(productos=>{
         db.Producto.findAll(filtroViejos).then(
            productosViejos =>

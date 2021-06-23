@@ -15,7 +15,7 @@ const controller = {
             console.log(JSON.stringify(productos, null, 10));
         }).catch(err=>{console.log(err)})        
     },
-
+    //crea el comentario obteniendo los datos del form
     comentarios: (req, res, next)=>{
         db.Comentario.create({
             usuario_id: req.session.resultado.id,

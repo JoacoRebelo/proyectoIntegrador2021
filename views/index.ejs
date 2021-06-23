@@ -27,7 +27,7 @@
 							</figure>
 							<article class="product-box_data">
 								<h2><%= productos[index].name %></h2>
-								<p>Subido por <a href="/profile/<%= productos[index].user_id %>"> <%= productos[index].usuario.name %> </a></p>
+								<p>Subido por <a href="/profile/<%= productos[index].usuario.id %>"> <%= productos[index].usuario.name %> </a></p>
 								<p>Comentarios: <%= productos[index].comentario.length %></p>
 							</article>
 						</a>
@@ -46,14 +46,14 @@
 			<!-- Show the "ultimos" products -->
 			<%for (let index = 0; index < 4; index++) { %>		
 				<div class="col-12 col-sm-6 col-lg-3" id="masViejos">
-					<section class="product-box">
+					<section class="product-box" id="productos-viejos">
 						<a href="../product/<%= productosViejos[index].id %>">
 							<figure class="product-box_image">
 								<img src="/images/products/<%= productosViejos[index].url %>" alt="">			
 							</figure>
 							<article class="product-box_data">
 								<h2><%= productosViejos[index].name %></h2>
-								<p>Subido por <a href="/profile/<%= productosViejos[index].user_id %>"> <%= productosViejos[index].usuario.name %> </a></p>
+								<p>Subido por <a href="/profile/<%= productosViejos[index].usuario.id %>"> <%= productosViejos[index].usuario.name %> </a></p>
 								<p>Comentarios:<%= productosViejos[index].comentario.length %> </p>
 							</article>
 						</a>

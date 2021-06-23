@@ -5,8 +5,11 @@ const controller = {
     edit: function(req, res){
         res.render('profile-edit')
     }, 
+    //controlador para editar el usuario
     editUsuario: (req, res) => {
+        //encripto la contrasena nueva
         let passEncriptada = bcrypt.hashSync(req.body.pass);
+        //con el .update actualizamos el usuario
         db.Usuario.update({
             name: req.body.name,
             email: req.body.email,
@@ -14,6 +17,7 @@ const controller = {
             pass: passEncriptada,
             date: req.body.date
         },{
+            //el where se usa para que mysql sepa donde hacer el update
             where: {
                 id: req.body.id
             }
