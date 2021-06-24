@@ -41,8 +41,8 @@ FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE
 -- SELECT * FROM productos;
 -- SELECT * FROM comentarios;
 
-INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac,url) VALUES ('Matias', 20 , 'matias@gmail.com', 'asfabfdbfda','1999-06-16','usuariourl-1624240013456.jpeg');
-INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Andres', 10 , 'andres@gmail.com', 'asfabfdbfda','2002-05-13');
+INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac,url) VALUES ('Matias', 20 , 'matias@gmail.com', 'asfabfdbfda','1999-06-16','mati.png');
+INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac, url) VALUES ('Andres', 10 , 'andres@gmail.com', 'asfabfdbfda','2002-05-13', 'andy.png');
 INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Joaquin', 10 , 'joaquin@gmail.com', 'asfabfdbfda', '2000-10-20');
 
 INSERT INTO productos (nombre, usuario_id, url, descripcionLarga) VALUES ('Adidas Ojotas Adilette Black',2,'adidas.jpeg','Con las Adidas Ojotas Adilette Black Relajáte después de la sesión de piscina con esta Ojotas ideales para la ducha. Su diseño sencillo muestra el auténtico legado de adidas con las emblemáticas 3 Rayas. Incorporan una mediasuela cómoda y suave que reconforta los pies cansados.');
