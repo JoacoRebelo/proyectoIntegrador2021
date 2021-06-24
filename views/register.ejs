@@ -21,11 +21,14 @@
 					 		<input type="date" class="form-control col-12 p-4" id="" placeholder="Fecha de nacimiento" name="date" required>
 					  <p>Email</p>
 					  		<input type="email" class="form-control col-12 p-4" id="" placeholder="Email" name="email" required>
+							  <% if(locals.errors){  %> 
+						<p class= “error” style="color: red; font-weight: normal;"> <%= errors.message2 %> </p>
+					 <% } %>
 					  <p>Contraseña</p>
 					  		<input type="password" class="form-control col-12 p-4" id="" placeholder="Contraseña" name="pass" required>
 							  <% if(locals.errors){  %> 
-						<p class= “error” style="color: red; font-weight: normal;"> <%= errors.message %> </p>
-					 <% } %>
+								<p class= “error” style="color: red; font-weight: normal;"> <%= errors.message %> </p>
+							 <% } %>
 					  <p>Imagen</p>
 							<input name='url' type="file">
 						<br>

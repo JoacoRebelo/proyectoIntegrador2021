@@ -13,7 +13,18 @@ const controller = {
         // primero creamos una variable donde encriptamos la contrasena
         let passEncriptada = bcrypt.hashSync(req.body.pass);
         let minLength = 3;
-        let errors = {}
+        let errors = {};
+        
+        db.Usuario.findOne({
+            where:{email: req.body.email}
+        }).then(usuario =>{
+            if (usuario) {
+                emailExistente = usuario.email
+            } else{
+                emailExistente = null
+            }
+            console.log(usuario);
+        
         //comprobamos que la contrasena tenga al menos 3 caracteres
         if (req.body.pass.length < minLength) {
             errors.message = "La contraseña debe contener mínimo 3 caracteres";
@@ -21,11 +32,16 @@ const controller = {
             return res.render ('register');
         }
         //chequeamos que no exista otro usuario con el mismo mail
-        if (req.body.email == db.Usuario.findOne(req.body.email)) {
-            errors.message = "El mail ya pertenece a un usuario";
+        if (req.body.email == '') {
+            errors.message2 = "Porfavor ingrese un mail";
             res.locals.errors = errors;
             return res.render ('register');
-        } 
+        } else if (emailExistente != null){
+            errors.message2 = "El correo que quiere ingresar ya ha sido utilizado";
+            res.locals.errors = errors;
+            return res.render ('register');
+        }
+    
         //si todo lo que verificamos esta bien crea el usuario nuevo con la contrasena encriptada
         else{
              db.Usuario.create({
@@ -46,7 +62,7 @@ const controller = {
         }).catch(error => {
             console.log(error);
         })
-        }
+        }})
        
     }
 }

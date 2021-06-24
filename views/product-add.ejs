@@ -16,11 +16,11 @@
 				<form action="/product-add" method="POST"  enctype='multipart/form-data' class="row g-3 align-items-center">
 					<div class="form-group col-12">
 						<p>Titulo</p>
-					  		<input type="text" class="form-control col-12 p-4" placeholder="Titulo" name="name">
+					  		<input type="text" class="form-control col-12 p-4" placeholder="Titulo" name="name" required>
 							  <p>Agregar Descripción</p>
-					  		<input type="text" class="form-control col-12 p-4" placeholder="Descripción" name="descripcionLarga">
+					  		<input type="text" class="form-control col-12 p-4" placeholder="Descripción" name="descripcionLarga" required>
 							  <p>Imagen</p>
-							<input name='url' type="file">
+							<input name='url' type="file" required>
 								  <br>
 								  <br>
 							<input type="submit" class="btn btn-primary" value="Agregar">
