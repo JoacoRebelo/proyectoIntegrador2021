@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
   if(req.session.resultado){
     res.locals = {
       usuarioLogueado: false,
-      usuarioPrueba: req.session.resultado.name,
+      nombreUsuario: req.session.resultado.name,
       fotoUsuario: req.session.resultado.url,
       idUsuario: req.session.resultado.id,
     }
