@@ -28,7 +28,7 @@ const controller = {
         db.Producto.findAll(filtro).then(productos=>{
         db.Producto.findAll(filtroViejos).then(
            productosViejos =>
-           {res.render('index', {productos: productos, productosViejos:productosViejos})
+           {res.render('index', {productos : productos, productosViejos : productosViejos})
         })})
     }  
 }
