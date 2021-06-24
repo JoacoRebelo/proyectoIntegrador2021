@@ -1,4 +1,7 @@
-CREATE TABLE usuarios (
+CREATE SCHEMA `integrador_db2` ;
+USE `integrador_db2`;
+
+CREATE TABLE usuarios(
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(500) NOT NULL,
 seguidores TINYINT UNSIGNED,
@@ -30,16 +33,15 @@ createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
 FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
-FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE
+FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE 
 );
 
-SELECT * FROM usuarios;
-SELECT * FROM productos;
-SELECT * FROM comentarios;
 
-INSERT INTO comentarios (usuario_id, producto_id, comentario) VALUES (1, 2 , 'que onda perri');
+-- SELECT * FROM usuarios;
+-- SELECT * FROM productos;
+-- SELECT * FROM comentarios;
 
-INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Matias', 20 , 'matias@gmail.com', 'asfabfdbfda','1999-06-16');
+INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac,url) VALUES ('Matias', 20 , 'matias@gmail.com', 'asfabfdbfda','1999-06-16','usuariourl-1624240013456.jpeg');
 INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Andres', 10 , 'andres@gmail.com', 'asfabfdbfda','2002-05-13');
 INSERT INTO usuarios (nombre, seguidores, email, contrasena, fecha_nac) VALUES ('Joaquin', 10 , 'joaquin@gmail.com', 'asfabfdbfda', '2000-10-20');
 
@@ -54,3 +56,4 @@ INSERT INTO productos (nombre, usuario_id, url, descripcionLarga) VALUES ('Conve
 INSERT INTO productos (nombre, usuario_id, url, descripcionLarga) VALUES ('Nike Air Mag',3,'mags.jpeg','Zapatillas Nike Air Mag es un relleno de Marty McFly, nuevo limited edition, en caja original, incluye cargador. Los zapatos tiene que estar en carga de 5 horas. It puede ser controlado si no desea encender las luces en los zapatos en orden para ahorrar algunos Power.');
 INSERT INTO productos (nombre, usuario_id, url, descripcionLarga) VALUES ('Crocs Crocband Clog',2,'crocs.jpeg','Las Crocs Crocband Clog son el modelo más buscado, más usado, más amado por nuestros fans. Quien no tiene una, dos o tres? Con colores clásicos, el zueco y banda son la combinación perfecta.Además podes personalizarlas como mas te guste con los Jibbitz™ de tus personajes favoritos, letras y numeros.');
 INSERT INTO productos (nombre, usuario_id, url, descripcionLarga) VALUES ('Adidas Low Bad Bunny Pink',3,'adidasBB.jpeg','Estos Easter Egg de las Adidas Low Bad Bunny Pink apuestan por un color más claro y atrevido que va bastante con algunas siluetas que ha usado Bunny en el pasado. Siguen el diseño que ya vimos en el pasado del Forum Low, el cual es ligeramente amplio de la parte de arriba, tiene un doble detalle de suela en la parte de enfrente con distintas tonalidades del mismo color, lo cual lo hace más llamativo.');
+
