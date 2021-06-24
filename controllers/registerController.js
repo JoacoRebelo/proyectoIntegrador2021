@@ -17,13 +17,13 @@ const controller = {
         
         db.Usuario.findOne({
             where:{email: req.body.email}
-        }).then(usuario =>{
-            if (usuario) {
-                emailExistente = usuario.email
+        }).then(resultado =>{
+            if (resultado) {
+                emailExistente = resultado.email
             } else{
                 emailExistente = null
             }
-            console.log(usuario);
+            console.log(resultado);
         
         //comprobamos que la contrasena tenga al menos 3 caracteres
         if (req.body.pass.length < minLength) {
