@@ -5,23 +5,31 @@
 <body>
 	<!-- product detail -->
 	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<p class="product-detail-description">
+		<div class="nombreEditarBorrar">
+			<section>
 				<h1 class="nombreProducto"><%= productos.name %></h1>
+			</section>
+
+
 				<% if (! usuarioLogueado){ %>
 					<% if(idUsuario == productos.usuario_id) { %>
-						<div style="width: 100%; text-align: right;">						
+						<section>
+							<a href="/product-edit/<%= productos.id %>" class="rosca"> 		
+								<i class="fas fa-cog"></i>
+							</a>
+						</section>
+
+						<section>			
 							<form action="/product" method="POST">
 								<input type="hidden" name="id" value="<%= productos.id %>">
 								<input type="submit" value="Borrar" id="botonBorrar">
 							</form>
-							<a href="/product-edit/<%= productos.id %>" >
-							<i class="fas fa-cog"></i>
-							</a>
-						</div>
+						</section>
+							
+						
 						<% }} %>
-					</p>
-				</div>
+					
+		</div>
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
@@ -49,7 +57,7 @@
 					</section>
 					<% if(! usuarioLogueado) { %>
 					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Comentar..." name="comentario">
+						<input class="form-input" type="text" value="" placeholder="Comentar..." name="comentario" style="padding-right: 5px;">
 						<input type="submit" class="btn btn-primary" value="Agregar comentario">
 					</form>
 					<%}%>
