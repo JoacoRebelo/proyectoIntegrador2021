@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const { urlencoded } = require('express');
 
 const controller = {
-    login: function(req, res){
+    login: (req, res) => {
         res.render('login')
     },
     //creo el control que valida y loguea el usuario

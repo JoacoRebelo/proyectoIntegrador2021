@@ -1,7 +1,7 @@
 const db = require('../database/models');
 
 const controller = {
-    add: function(req, res){
+    add: (req, res) => {
         res.render('product-add')
     }, 
     productAdd:(req,res)=>{

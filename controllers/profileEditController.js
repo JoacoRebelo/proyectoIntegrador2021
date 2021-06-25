@@ -2,7 +2,7 @@ const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
 const controller = {
-    edit: function(req, res){
+    edit: (req, res) => {
         res.render('profile-edit')
     }, 
     //controlador para editar el usuario

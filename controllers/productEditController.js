@@ -1,7 +1,7 @@
 const db = require('../database/models');
 
 const controller = {
-    editar: function(req, res){
+    editar: (req, res) => {
         //busco un producto con el mismo id que en la ruta
         db.Producto.findByPk(req.params.id).then(productos =>{
             res.render("product-edit", {productos : productos})

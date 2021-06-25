@@ -39,7 +39,7 @@ saveUninitialized: true
 
 const db = require('./database/models');
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   if(req.cookies.userId && !req.session.resultado) {
     db.Usuario.findByPk(req.cookies.userId).then(resultado => {
       req.session.resultado = resultado.name;
@@ -51,7 +51,7 @@ app.use(function(req, res, next) {
 );
 
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   if(req.session.resultado){
     res.locals = {
       usuarioLogueado: false,
