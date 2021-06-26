@@ -13,11 +13,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
         }, descripcionLarga: {
             type: dataTypes.STRING,
-            field: "descripcionLarga"
         }, url: {
             type: dataTypes.STRING,
-            field: "url"
         },
+        createdAt:{
+            type: dataTypes.DATE
+        },
+        updatedAt:{
+            type: dataTypes.DATE
+        }
     }, {
         tableName: "productos",
         

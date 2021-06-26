@@ -7,15 +7,18 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         }, usuario_id: {
             type: dataTypes.INTEGER,
-            field: "usuario_id"
         },
         producto_id: {
             type: dataTypes.INTEGER,
-            field: "producto_id"
         },
         comentario: {
             type: dataTypes.STRING,
-            field: "comentario"
+        },
+        createdAt:{
+            type: dataTypes.DATE
+        },
+        updatedAt:{
+            type: dataTypes.DATE
         }
     }, {
         tableName: "comentarios",

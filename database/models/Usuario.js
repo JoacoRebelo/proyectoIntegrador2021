@@ -14,15 +14,19 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: {
             type: dataTypes.STRING,
-            field: "email"
         },
         url:{
             type:dataTypes.STRING,
-            field:'url'
         },
         date: {
             type: dataTypes.DATE,
             field: 'fecha_nac'
+        },
+        createdAt:{
+            type: dataTypes.DATE
+        },
+        updatedAt:{
+            type: dataTypes.DATE
         }
     }, {
         tableName: "usuarios",
