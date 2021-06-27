@@ -44,12 +44,20 @@
 						<article><p>El producto aún no tiene comentarios </p></article>
 						<%}else{%>
 						<%for (let index = 0; index < productos.comentario.length; index++) { %>		
-						<article>
+							<article>
 							<img src="/images/users/<%=productos.comentario[index].usuario.url%>" alt="">
 							<div class="data">
 								<p class="user">
 									<strong> <a href="/profile/<%=productos.comentario[index].usuario_id%>"><%=productos.comentario[index].usuario.name%></a> </strong>
 									<%= productos.comentario[index].comentario %></p>
+								<% if (! usuarioLogueado){ %>
+								<% if(idUsuario == productos.comentario[index].usuario_id) { %>
+									<form action="" method="POST">
+										<input type="hidden" name="comentario_id" value="<%= productos.comentario[index].id %>">
+										<input type="submit" value="Borrar" id="botonBorrar">
+									</form>
+								<%}}%>
+
 							</div>
 						</article>
 						<%}}%>

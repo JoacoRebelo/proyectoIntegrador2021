@@ -13,6 +13,7 @@ const controller = {
         db.Producto.findByPk(req.params.id, filtro).then(productos =>{
             res.render("product", {productos : productos})
             console.log(JSON.stringify(productos, null, 10));
+           
         }).catch(err=>{console.log(err)})        
     },
     //crea el comentario obteniendo los datos del form
@@ -32,9 +33,22 @@ const controller = {
                 id: req.body.id
             },
         }).then(() => {
-            res.redirect('http://localhost:3000/');
+            res.redirect('/');
         }).catch(err => console.log(err));
     },
     
+    borrarComentario:(req,res)=>{
+        db.Comentario.destroy({
+            where: {
+                id: req.body.comentario_id
+            },
+            
+        }).then(() => {
+            res.redirect('/product/' + req.params.id);
+            
+        }).catch(err => console.log(err));
+        console.log(req.body.comentario_id)
+        
+    },
 }
 module.exports = controller; 

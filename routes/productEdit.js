@@ -22,6 +22,4 @@ const upload = multer({
 router.get('/:id', controller.editar);
 router.post('/',upload.single('url'), controller.postearEdit);
 
-
-
 module.exports = router;
