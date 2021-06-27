@@ -4,7 +4,6 @@ let controller = require('../controllers/registerController');
 
 const multer = require('multer');
 const path = require('path');
-const { log } = require('console');
 
 const subirFotoPerfil = multer.diskStorage({
   destination: (req, file, cb) => { //definimos la ruta donde se va a almacenar el archivo

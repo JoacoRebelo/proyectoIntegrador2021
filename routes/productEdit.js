@@ -4,11 +4,10 @@ let controller = require('../controllers/productEditController');
 
 const multer = require('multer');
 const path = require('path');
-const { log } = require('console');
 
 const subirFoto = multer.diskStorage({
   destination: (req, file, cb) => { //definimos la ruta donde se va a almacenar el archivo
-    let rutaDirectorio = 'public/images/products'; //definimos donde queremos que se guarde
+    let rutaDirectorio = 'public/images/products'; 
     cb(null, rutaDirectorio);
   },
   filename: (req, file, cb) => { //indicaremos el nombre con el que se va a guardar el archivo
