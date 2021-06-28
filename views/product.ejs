@@ -50,13 +50,13 @@
 								<p class="user">
 									<strong> <a href="/profile/<%=productos.comentario[index].usuario_id%>"><%=productos.comentario[index].usuario.name%></a> </strong>
 									<%= productos.comentario[index].comentario %></p>
-								<% if (! usuarioLogueado){ %>
+								<!-- <% if (! usuarioLogueado){ %>
 								<% if(idUsuario == productos.comentario[index].usuario_id) { %>
 									<form action="" method="POST">
-										<input type="hidden" name="comentario_id" value="<%= productos.comentario[index].id %>">
+										<input type="hidden" name="comentarioId" value="<%= productos.comentario[index].comentario %>">
 										<input type="submit" value="Borrar" id="botonBorrar">
 									</form>
-								<%}}%>
+								<%}}%> -->
 
 							</div>
 						</article>

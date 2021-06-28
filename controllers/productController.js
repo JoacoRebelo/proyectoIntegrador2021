@@ -37,18 +37,14 @@ const controller = {
         }).catch(err => console.log(err));
     },
     
-    borrarComentario:(req,res)=>{
-        db.Comentario.destroy({
-            where: {
-                id: req.body.comentario_id
-            },
-            
-        }).then(() => {
-            res.redirect('/product/' + req.params.id);
-            
-        }).catch(err => console.log(err));
-        console.log(req.body.comentario_id)
-        
-    },
+    // borrarComentario:(req,res)=>{
+    //     db.Comentario.destroy({
+    //         where: {
+    //             comentario: req.body.comentarioId
+    //         }, 
+    //     }).then(() => {
+    //         res.redirect('/product/' + req.params.id);
+    //     }).catch(err => console.log(err));
+    // },
 }
 module.exports = controller; 
