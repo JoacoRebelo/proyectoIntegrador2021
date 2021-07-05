@@ -10,9 +10,9 @@ const controller = {
             {association: "comentario", include:'usuario'},
             {association:'usuario'}
         ]}
-        db.Producto.findByPk(req.params.id, filtro).then(productos =>{
+        db.Producto.findByPk(req.params.id, filtro).then(productos =>{ 
             res.render("product", {productos : productos})
-            console.log(JSON.stringify(productos, null, 10));
+            console.log(JSON.stringify(productos, null, 10)); //detalle del producto de json en la terminal
            
         }).catch(err=>{console.log(err)})        
     },
@@ -30,7 +30,7 @@ const controller = {
     borrar:(req,res)=>{
         db.Producto.destroy({
             where: {
-                id: req.body.id
+                id: req.body.id 
             },
         }).then(() => {
             res.redirect('/');

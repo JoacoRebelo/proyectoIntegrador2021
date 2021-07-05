@@ -5,15 +5,18 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
-        }, name: {
+        }, 
+        name: {
             type: dataTypes.STRING,
             field: "nombre"
         }, 
         usuario_id: {
             type: dataTypes.INTEGER,
-        }, descripcionLarga: {
+        }, 
+        descripcionLarga: {
             type: dataTypes.STRING,
-        }, url: {
+        }, 
+        url: {
             type: dataTypes.STRING,
         },
         createdAt:{
@@ -31,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
             as:'usuario',
             foreignKey:'usuario_id'
         });
-        Producto.hasMany(db.Comentario,{
+        Producto.hasMany(db.Comentario,{ 
             as:'comentario',
             foreignKey:'producto_id'
         })

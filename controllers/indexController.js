@@ -24,11 +24,10 @@ const controller = {
                 {association: "comentario"},
                 {association:'usuario'}
             ]}
-        //creamos un doble filtro en la busqueda de productosß
+        //creamos un doble filtro en la busqueda de productos
         db.Producto.findAll(filtro).then(productos=>{
-        db.Producto.findAll(filtroViejos).then(
-           productosViejos =>
-           {res.render('index', {productos : productos, productosViejos : productosViejos})
+        db.Producto.findAll(filtroViejos).then(productosViejos =>{
+               res.render('index', {productos : productos, productosViejos : productosViejos})
         })})
     }  
 }

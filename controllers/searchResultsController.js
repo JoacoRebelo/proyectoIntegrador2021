@@ -5,7 +5,7 @@ const controller = {
     //creamos el controlador de busqueda
     results: (req, res) => {
         //creamos un filtro donde busque 
-        let filtro = {where: {descripcionLarga:{[Op.like]:'%'+ req.query.search + '%'}},
+        let filtro = {where: {descripcionLarga:{[Op.like]:'%'+ req.query.search + '%'}}, 
         //creamos la asosiacion para poder usar los datos en la vista
         include: [
             {association: "comentario", include:'usuario'},

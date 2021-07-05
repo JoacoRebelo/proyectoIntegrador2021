@@ -9,7 +9,7 @@ const controller = {
     },
     postearEdit:(req,res)=>{
         //hago un update del producto con los campos del form
-        db.Producto.update({
+        db.Producto.update({ 
             name: req.body.name,
             descripcionLarga: req.body.descripcionLarga,
             url: req.file.filename,

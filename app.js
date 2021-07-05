@@ -32,17 +32,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const session = require('express-session');
 
-app.use(session( {secret: "secretoso mensaje",
+//esto configura la sesión
+app.use(session( {secret: "secretoso mensaje", //el mensaje sirve para identificar nuestro sitio web del resto
 resave: false,
 saveUninitialized: true
 }));
 
 const db = require('./database/models');
 
+
 app.use((req, res, next) => {
-  if(req.cookies.userId && !req.session.resultado) {
-    db.Usuario.findByPk(req.cookies.userId).then(resultado => {
-      req.session.resultado = resultado.name;
+  if(req.cookies.userId && !req.session.resultado) { 
+    db.Usuario.findByPk(req.cookies.userId).then(resultado => { 
+      req.session.resultado = resultado.name; 
       return next();
     }).catch(error=>console.log(error));
   } else {
@@ -52,16 +54,16 @@ app.use((req, res, next) => {
 
 
 app.use((req, res, next) => {
-  if(req.session.resultado){
-    res.locals = {
-      usuarioLogueado: false,
+  if(req.session.resultado){ 
+    res.locals = { 
+      usuarioLogueado: true, 
       nombreUsuario: req.session.resultado.name,
       fotoUsuario: req.session.resultado.url,
       idUsuario: req.session.resultado.id,
     }
   } else {
     res.locals = {
-      usuarioLogueado: true
+      usuarioLogueado: false
     }
   }
   return next();

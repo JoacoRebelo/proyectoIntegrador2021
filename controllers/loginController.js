@@ -38,8 +38,8 @@ const controller = {
                     url: resultado.url
                 };
                 //si apreta el boton de remember guarda las cookies por mas tiempo
-                if(req.body.remember){
-                    res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 500 });
+                if(req.body.remember){ 
+                    res.cookie('userId', resultado.id, { maxAge: 1000 * 60 * 500 }); 
                 }
                 res.redirect('/');
             } else {
